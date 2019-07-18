@@ -1,0 +1,29 @@
+server:
+  port: 80  
+# Spring boot application
+
+spring:
+ application:
+  name: dubbo-auto-configuration-consumer-demo
+ profiles:
+  active: test
+
+dubbo:
+ application:
+  name: dubbo-auto-configuration-consumer-demo
+  
+---
+spring:
+  profiles: test 
+  dubbo:
+   registry:
+    protocol: zookeeper
+    address: zk地址（多个逗号分割）
+
+---
+spring:
+  profiles: dev 
+  dubbo:
+   registry:
+    protocol: zookeeper
+    address: zk地址（多个逗号分割）
